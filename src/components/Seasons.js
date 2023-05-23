@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Information from './Info';
 
 const Seasons = () => {
     const allSeasons = useSelector((state) => state.seasons)
@@ -10,7 +12,10 @@ const Seasons = () => {
             </div>
             <div>
                     {allSeasons.map((day) => (
-                        <p key={day.date}>{day.name}
+                        <p key={day.date}>
+                            <Link to='information'>
+                            {day.name}
+                            </Link>
                         <span>{day.date}</span>
                         </p>
                     ))}

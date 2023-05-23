@@ -12,7 +12,8 @@ export const getSeasons = createAsyncThunk('seasons/getSeasons', async () => {
         name: day.name,
         local_name: day.locaName,
         status: day.global,
-        position: day.fixed
+        position: day.fixed,
+        type: day.types[0]
       }));
       return array
 })
