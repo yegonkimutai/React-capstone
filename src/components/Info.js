@@ -14,39 +14,47 @@ const Information = () => {
         <h3>Coin details:</h3>
         <div className="details-cont">
           <p>
-            Market Cap: $
+            Market Cap: 
+            <span>
+            $
             {Number(currency.market_cap_usd).toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
+            </span>
           </p>
           <p>
-            Volume(24h): $
+            Volume(24h):
+            <span> 
+            $
             {Number(currency.volume24a).toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
+            </span>
           </p>
           <p>
             Total Supply:
             {' '}
+            <span>
             {Number(currency.tsupply).toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
+            </span>
           </p>
           <p>
             1h %:
             {' '}
             {currency.percent_change_1h < 0 ? (
               <>
-                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
+                <FaChevronDown style={{ color: 'red' }} />
                   {Math.abs(currency.percent_change_1h)}
                   %
                 </span>
               </>
             ) : (
               <>
-                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
+                <FaChevronUp style={{ color: 'green' }} />
                   {currency.percent_change_1h}
                   %
                 </span>
@@ -58,16 +66,16 @@ const Information = () => {
             {' '}
             {currency.percent_change_24h < 0 ? (
               <>
-                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
+                <FaChevronDown style={{ color: 'red' }} />
                   {Math.abs(currency.percent_change_24h)}
                   %
                 </span>
               </>
             ) : (
               <>
-                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
+                <FaChevronUp style={{ color: 'green' }} />
                   {currency.percent_change_24h}
                   %
                 </span>
@@ -79,16 +87,16 @@ const Information = () => {
             {' '}
             {currency.percent_change_7d < 0 ? (
               <>
-                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
+                <FaChevronDown style={{ color: 'red' }} />
                   {Math.abs(currency.percent_change_7d)}
                   %
                 </span>
               </>
             ) : (
               <>
-                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
+                <FaChevronUp style={{ color: 'green' }} />
                   {currency.percent_change_7d}
                   %
                 </span>
@@ -98,14 +106,19 @@ const Information = () => {
           <p>
             Price:
             {' '}
+            <span>
             <FaBitcoin />
             {Number(currency.price_btc).toFixed(2)}
+            </span>
           </p>
           <p>
-            Price: $
+            Price:
+            <span> 
+            $
             {Number(currency.price_usd).toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
+            </span>
           </p>
         </div>
       </div>
