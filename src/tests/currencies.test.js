@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from '../redux/store'
 import { render, screen } from '@testing-library/react';
+import store from '../redux/store';
 import Currencies from '../components/Currencies';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -10,15 +10,14 @@ describe('Currencies content', () => {
     render(
       <Router>
         <Provider store={store}>
-        <Currencies />
+          <Currencies />
         </Provider>
       </Router>,
-    )
+    );
     const pageTitle = screen.getByText('Currency Tracker');
     expect(pageTitle).toBeInTheDocument();
 
-    const placeHolder = screen.getByPlaceholderText('Search currency...')
+    const placeHolder = screen.getByPlaceholderText('Search currency...');
     expect(placeHolder).toBeInTheDocument();
-
   });
 });
