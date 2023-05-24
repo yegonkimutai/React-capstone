@@ -150,8 +150,9 @@ If you like this project please like and share. You can also reach out to my pla
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+Original design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on Behance.
 
-I would like to thank my partner and reviewers of the code for helping make the site better.
+I would also like to thank my partners and reviewers of the code for helping make the site better.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
