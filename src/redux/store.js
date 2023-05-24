@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import seasonReducer from "./seasons/seasonSlice";
+import currencyReducer from "./currency/currencySlice";
 
 const store = configureStore({
     reducer: {
-        seasons: seasonReducer
+        currencies: currencyReducer,
     }
 })
 

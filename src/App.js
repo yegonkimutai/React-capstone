@@ -1,5 +1,5 @@
-import Seasons from "./components/Seasons";
-import { getSeasons } from "./redux/seasons/seasonSlice";
+import Currencies from "./components/Currencies";
+import { getCurrencies} from "./redux/currency/currencySlice";
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from "react-router-dom";
@@ -10,15 +10,15 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getSeasons())
+    dispatch(getCurrencies())
 }, [dispatch])
 
   return (
     <div className="App">
       <Navigation/>
       <Routes>
-        <Route path="/" element={<Seasons/>}/>
-        <Route path="information" element={<Information/>}/>
+        <Route path="/" element={<Currencies/>}/>
+        <Route path="information/:name" element={<Information/>}/>
       </Routes>
     </div>
   );

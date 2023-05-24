@@ -1,29 +1,105 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getSeasons } from '../redux/seasons/seasonSlice';
-import { useLocation } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 
 const Information = () => {
-    const details = useSelector((state) => state.seasons)
     const location = useLocation()
-    const holiday = location.state
-    const dispatch = useDispatch() 
-
-    useEffect(() => {
-        dispatch(getSeasons(holiday))
-    }, [])
-
+    const { currency } = location.state
+    
     return(
         <div>
-                    {details.map((day) => (
-                        <div key={day.date}>
-                            <h2>{day.name}</h2>
-                            <p>{day.local_name}</p>
-                            <p>{day.type}</p>
-                            <p>{day.status}</p>
-                            <p>{day.position}</p>
-                        </div>
-                    ))}
+            <h1>{currency.name}</h1>
+            <h4 className="currency-symbol">{currency.symbol}</h4>
+            <div className="deets-container" key={currency.id}>
+        <h3 className="deets-title">coin details:</h3>
+        <div>
+          <p className="market-cap deets">
+            market cap: $
+            {Number(currency.market_cap_usd).toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </p>
+          <p className="volume deets">
+            volume(24h): $
+            {Number(currency.volume24a).toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </p>
+          <p className="total-supply deets">
+            total supply:
+            {' '}
+            {Number(currency.tsupply).toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </p>
+          <p className="change deets">
+            1h %:
+            {' '}
+            {currency.percent_change_1h < 0 ? (
+              <>
+                <span style={{ color: 'red' }}>
+                  {Math.abs(currency.percent_change_1h)}
+                  %
+                </span>
+              </>
+            ) : (
+              <>
+                <span style={{ color: 'green' }}>
+                  {currency.percent_change_1h}
+                  %
+                </span>
+              </>
+            )}
+          </p>
+          <p className="change deets">
+            24h %:
+            {' '}
+            {currency.percent_change_24h < 0 ? (
+              <>
+                <span style={{ color: 'red' }}>
+                  {Math.abs(currency.percent_change_24h)}
+                  %
+                </span>
+              </>
+            ) : (
+              <>
+                <span style={{ color: 'green' }}>
+                  {currency.percent_change_24h}
+                  %
+                </span>
+              </>
+            )}
+          </p>
+          <p className="change deets">
+            7d %:
+            {' '}
+            {currency.percent_change_7d < 0 ? (
+              <>
+                <span style={{ color: 'red' }}>
+                  {Math.abs(currency.percent_change_7d)}
+                  %
+                </span>
+              </>
+            ) : (
+              <>
+                <span style={{ color: 'green' }}>
+                  {currency.percent_change_7d}
+                  %
+                </span>
+              </>
+            )}
+          </p>
+          <p className="price-btc deets">
+            price:
+            {' '}
+            {Number(currency.price_btc).toFixed(2)}
+          </p>
+          <p className="price-usd deets">
+            price: $
+            {Number(currency.price_usd).toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </p>
+        </div>
+      </div>
         </div>
     )
 }
