@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currencies Render Currencies Component 1`] = `
+<div>
+  <h2>
+    Currency Tracker
+  </h2>
+  <div>
+    <input
+      className="search-input"
+      onChange={[Function]}
+      placeholder="Search coin..."
+      role="button"
+      tabIndex={0}
+      type="text"
+      value=""
+    />
+  </div>
+  <div />
+</div>
+`;
