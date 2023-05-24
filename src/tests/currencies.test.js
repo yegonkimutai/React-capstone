@@ -1,19 +1,24 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import TestRenderer from 'react-test-renderer';
+import store from '../redux/store'
+import { render, screen } from '@testing-library/react';
 import Currencies from '../components/Currencies';
-import store from '../redux/store';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('Currencies', () => {
-  test('Render Currencies Component', () => {
-    const tree = TestRenderer.create(
-      <BrowserRouter>
+describe('Currencies content', () => {
+  test('Render Correct Details', () => {
+    render(
+      <Router>
         <Provider store={store}>
-          <Currencies />
+        <Currencies />
         </Provider>
-      </BrowserRouter>,
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+      </Router>,
+    )
+    const pageTitle = screen.getByText('Currency Tracker');
+    expect(pageTitle).toBeInTheDocument();
+
+    const placeHolder = screen.getByPlaceholderText('Search currency...')
+    expect(placeHolder).toBeInTheDocument();
+
   });
 });

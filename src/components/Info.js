@@ -118,7 +118,7 @@ const Information = () => {
             {Number(currency.price_usd).toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
-            </span>
+            </span> 
           </p>
         </div>
       </div>
