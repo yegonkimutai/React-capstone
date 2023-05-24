@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import './Currencies.css'
 
 const Currencies = () => {
     const navigation = useNavigate()
@@ -18,12 +20,12 @@ const Currencies = () => {
     }
 
     return(
-        <div>
-            <h2>Currency Tracker</h2>
+        <div className='main-container'>
+            <h2 className='home-title'>Currency Tracker</h2>
             <div>
             <input
                 type="text"
-                placeholder="Search coin..."
+                placeholder="Search currency..."
                 className="search-input"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -31,7 +33,7 @@ const Currencies = () => {
                 tabIndex={0}
         />
             </div>
-            <div>
+            <div className='currency-list'>
                     {filtered.map((currency) => (
                         <div
                         key={currency.id}
@@ -41,8 +43,28 @@ const Currencies = () => {
                               switchPage(currency);
                             }
                         }}
+                        className='currency-card'
                         >
                             <h2>{currency.symbol}</h2>
+                            <p className="change">
+              {currency.percent_change_1h < 0 ? (
+                <>
+                  <FaChevronDown style={{ color: 'red' }} />
+                  <span style={{ color: 'red' }}>
+                    {Math.abs(currency.percent_change_1h)}
+                    %
+                  </span>
+                </>
+              ) : (
+                <>
+                  <FaChevronUp style={{ color: 'green' }} />
+                  <span style={{ color: 'green' }}>
+                    {currency.percent_change_1h}
+                    %
+                  </span>
+                </>
+              )}
+            </p>
                         </div>
                     ))}
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useLocation } from 'react-router-dom';
+import './Navbar.css'
 
 const Navigation = () => {
     const location = useLocation()
@@ -13,11 +14,11 @@ const Navigation = () => {
 
     return (
         <nav>
-            <div>
+            <div className="main-nav">
                 <ul>
                     {links.map((link) => (
                         <li key={link.id}>
-                            <NavLink to={link.path}>
+                            <NavLink to={link.path} style={{ color: 'white', textDecoration: 'none'}}>
                                 {location.pathname === '/' ? 'HOME' : '◀︎ Back'}
                             </NavLink>
                         </li>

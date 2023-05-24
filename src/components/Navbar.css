@@ -1,0 +1,13 @@
+.main-nav {
+    width: 100%;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    color: #fff;
+}
+.main-nav ul:hover {
+    cursor: pointer;
+}
+

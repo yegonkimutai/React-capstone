@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navbar";
 import Information from "./components/Info"
+import './App.css'
 
 function App() {
   const dispatch = useDispatch()
