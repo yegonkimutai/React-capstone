@@ -1,18 +1,18 @@
-import { useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp, FaBitcoin } from 'react-icons/fa';
-import './Info.css'
+import './Info.css';
 
 const Information = () => {
-    const location = useLocation()
-    const { currency } = location.state
-    
-    return(
-        <div className='main-cont'>
-            <h1>{currency.name}</h1>
-            <h4>{currency.symbol}</h4>
-            <div key={currency.id}>
-            <h3>Coin details:</h3>
-            <div className='details-cont'>
+  const location = useLocation();
+  const { currency } = location.state;
+
+  return (
+    <div className="main-cont">
+      <h1>{currency.name}</h1>
+      <h4>{currency.symbol}</h4>
+      <div key={currency.id}>
+        <h3>Coin details:</h3>
+        <div className="details-cont">
           <p>
             Market Cap: $
             {Number(currency.market_cap_usd).toLocaleString(undefined, {
@@ -37,7 +37,7 @@ const Information = () => {
             {' '}
             {currency.percent_change_1h < 0 ? (
               <>
-              <FaChevronDown style={{ color: 'red' }} />
+                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
                   {Math.abs(currency.percent_change_1h)}
                   %
@@ -45,7 +45,7 @@ const Information = () => {
               </>
             ) : (
               <>
-              <FaChevronUp style={{ color: 'green' }} />
+                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
                   {currency.percent_change_1h}
                   %
@@ -58,7 +58,7 @@ const Information = () => {
             {' '}
             {currency.percent_change_24h < 0 ? (
               <>
-               <FaChevronDown style={{ color: 'red' }} />
+                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
                   {Math.abs(currency.percent_change_24h)}
                   %
@@ -66,7 +66,7 @@ const Information = () => {
               </>
             ) : (
               <>
-              <FaChevronUp style={{ color: 'green' }} />
+                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
                   {currency.percent_change_24h}
                   %
@@ -79,7 +79,7 @@ const Information = () => {
             {' '}
             {currency.percent_change_7d < 0 ? (
               <>
-               <FaChevronDown style={{ color: 'red' }} />
+                <FaChevronDown style={{ color: 'red' }} />
                 <span style={{ color: 'red' }}>
                   {Math.abs(currency.percent_change_7d)}
                   %
@@ -87,7 +87,7 @@ const Information = () => {
               </>
             ) : (
               <>
-              <FaChevronUp style={{ color: 'green' }} />
+                <FaChevronUp style={{ color: 'green' }} />
                 <span style={{ color: 'green' }}>
                   {currency.percent_change_7d}
                   %
@@ -109,8 +109,8 @@ const Information = () => {
           </p>
         </div>
       </div>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default Information
+export default Information;

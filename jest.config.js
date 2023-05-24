@@ -1,7 +1,6 @@
 module.exports = {
-    // Other Jest configuration options...
-    moduleNameMapper: {
-      '^axios$': require.resolve('axios'),
-    },
-  };
-  
+  // Other Jest configuration options...
+  moduleNameMapper: {
+    '^axios$': require.resolve('axios'),
+  },
+};

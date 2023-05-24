@@ -1,25 +1,25 @@
-import Currencies from "./components/Currencies";
-import { getCurrencies} from "./redux/currency/currencySlice";
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navbar";
-import Information from "./components/Info"
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import { getCurrencies } from './redux/currency/currencySlice';
+import Currencies from './components/Currencies';
+import Navigation from './components/Navbar';
+import Information from './components/Info';
+import './App.css';
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCurrencies())
-}, [dispatch])
+    dispatch(getCurrencies());
+  }, [dispatch]);
 
   return (
     <div className="App">
-      <Navigation/>
+      <Navigation />
       <Routes>
-        <Route path="/" element={<Currencies/>}/>
-        <Route path="information/:name" element={<Information/>}/>
+        <Route path="/" element={<Currencies />} />
+        <Route path="information/:name" element={<Information />} />
       </Routes>
     </div>
   );
