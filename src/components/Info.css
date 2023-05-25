@@ -1,0 +1,16 @@
+.main-cont h1,
+.main-cont h4 {
+  text-align: center;
+}
+
+.details-cont {
+  border: 1px solid black;
+  margin: 0.5rem;
+}
+
+.details-cont p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+}
