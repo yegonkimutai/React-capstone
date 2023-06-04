@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { BsArrowRightCircle } from 'react-icons/bs'
 import './Currencies.css';
 
 const Currencies = () => {
@@ -64,6 +65,7 @@ const Currencies = () => {
                 </>
               )}
             </p>
+            <p className='arrow-icon'><BsArrowRightCircle/></p>
           </button>
         ))}
       </div>
