@@ -27,7 +27,7 @@
   border: none;
 }
 
-.arrow-icon{
+.arrow-icon {
   font-size: 1.2rem;
 }
 
@@ -41,6 +41,6 @@
 
   .currency-card:nth-child(4n+2),
   .currency-card:nth-child(4n+3) {
-  background-color: #eddb34;
-}
+    background-color: #eddb34;
+  }
 }
