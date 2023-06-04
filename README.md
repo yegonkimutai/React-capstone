@@ -58,7 +58,7 @@ Click <a href="https://www.loom.com/share/6c92dddc26e44031875abd0ad45c194c">here
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://https://currency-tracker-five.vercel.app/)
+- [Live Demo Link](https://currency-tracker-five.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
